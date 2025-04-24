@@ -1,5 +1,22 @@
 version: 2
 
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: customer
+        description: Raw customer data
+        columns:
+          - name: customer_id
+            description: Unique ID for each customer
+            tests:
+              - not_null
+              - unique
+          - name: first_name
+          - name: last_name
+          - name: email
+          - name: address
+
 models:
   - name: my_first_dbt_model
     description: "A starter dbt model"
